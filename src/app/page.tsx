@@ -7,7 +7,7 @@ import { Card } from "../components/Card";
 import { useAppStore } from "../store/useAppStore";
 import { ChildFormModal } from "../components/ChildFormModal";
 import { ChildListTable } from "../components/ChildListTable";
-import { RevenueSummary } from "../components/RevenueSummary";
+import { RevenueSummary } from "@/components/RevenueSummary";
 
 export default function Page() {
   const {
@@ -155,3 +155,4 @@ export default function Page() {
     </div>
   );
 }
+
