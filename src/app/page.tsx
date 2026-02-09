@@ -1,5 +1,6 @@
-export const dynamic = 'force-dynamic';
 "use client";
+
+export const dynamic = "force-dynamic";
 
 import { useMemo, useState } from "react";
 import { Stepper, StepKey } from "../components/Stepper";
@@ -156,5 +157,6 @@ export default function Page() {
     </div>
   );
 }
+
 
 
