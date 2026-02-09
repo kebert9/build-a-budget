@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 "use client";
 
 import { useMemo, useState } from "react";
@@ -155,4 +156,5 @@ export default function Page() {
     </div>
   );
 }
+
 
