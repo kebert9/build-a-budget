@@ -20,10 +20,10 @@ type Actions = {
 };
 
 export function useAppStore(): AppState & { activeScenario: Scenario } & Actions {
-  const [state, setState] = useState<AppState>(() => ({
-    scenarios: [],
-    activeScenarioId: ""
-  }));
+ const [state, setState] = useState<AppState>(() => {
+  const s1 = makeDefaultScenario("Scenario 1");
+  return { scenarios: [s1], activeScenarioId: s1.id };
+});
 
   // init from localStorage (client-only)
   useEffect(() => {
@@ -44,7 +44,7 @@ export function useAppStore(): AppState & { activeScenario: Scenario } & Actions
 
   const activeScenario = useMemo(() => {
     const found = state.scenarios.find(s => s.id === state.activeScenarioId);
-    return found ?? state.scenarios[0]!;
+    return found ?? makeDefaultScenario("Scenario 1");
   }, [state]);
 
   const actions: Actions = {
@@ -122,3 +122,4 @@ export function useAppStore(): AppState & { activeScenario: Scenario } & Actions
 
   return { ...state, activeScenario, ...actions };
 }
+
